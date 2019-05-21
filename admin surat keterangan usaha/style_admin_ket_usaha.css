@@ -1,0 +1,98 @@
+/* Background */
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("../image/bg.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Akhir Background */
+
+/* Logo */
+.logo {
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+/* Akhir Logo */
+
+/* Garis Logo */
+.lineup {
+  margin-top: 20px;
+  margin-left: -12px;
+}
+
+/* Akhir Garis Logo */
+
+/* Title Header */
+.title {
+  margin-left: 110px;
+  margin-top: -55px;
+}
+
+.title_1 {
+  margin-top: -10px;
+  margin-left: 110px;
+}
+
+/* Akhir Title Header */
+
+/* Title Main */
+.title_2 {
+  padding-top: 10px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* Akhir Title Main */
+
+
+/* Scroll Card */
+.ScrollStyle {
+  max-height: 406px;
+  overflow-y: scroll;
+}
+
+/* Akhir Scroll Card */
+
+/* Dropdown Header */
+#dropdownMenu2 {
+  background-color: #0dc3f4;
+  border: 0;
+  color: black;
+}
+
+/* Akhir Dropdown Header */
+
+/* Text Align Table */
+th,
+tr {
+  text-align: center;
+  padding: 10px !important;
+  font-size: 15px;
+  /* margin: 5px !important; */
+}
+
+/* Akhir Text Align Table */
+
+/* Card */
+.card {
+  width: 1280px;
+  /* height: 500px; */
+  left: -100px;
+  top: 40px;
+}
+
+/* Akhir Card */
