@@ -31,7 +31,7 @@ include "../koneksi.php";
                     Pilih Jenis Surat
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">Surat Pengajuan SKCK</button>
+                    <a class="dropdown-item" href="../admin skck/admin_skck.php">Surat Keterangan Catatan Kepolisian</a>
                     <button class="dropdown-item" type="button">Another action</button>
                     <button class="dropdown-item" type="button">So</button>
                 </div>  

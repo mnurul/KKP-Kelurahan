@@ -14,7 +14,7 @@ include "../koneksi.php";
     <title>Kelurahan Harapan Baru</title>
     <link rel="stylesheet" href="../bs/css/bootstrap.min.css">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="style_admin_skck.css">
+    <link rel="stylesheet" type="text/css" href="style_admin_numpang_nikah.css">
 </head>
 <body>
     <div class="bg">
@@ -23,7 +23,7 @@ include "../koneksi.php";
         <h5 class="title" >KELURAHAN HARAPAN BARU</h5>
         <h5 class="title_1" >KOTA BEKASI</h5>
         <div class="container">
-            <h2 class="title_2" style="margin-top:7px;">Surat Keterangan Catatan Kepolisian</h2>
+            <h2 class="title_2" style="margin-top:7px;">Surat Numpang Nikah</h2>
         </div>
         <div class="container">
             <div class="dropdown" style="margin-top:-48px;margin-left:-15px;">
@@ -55,19 +55,23 @@ include "../koneksi.php";
                                     <th scope="col">Tempat</th>
                                     <th scope="col">Tanggal Lahir</th>
                                     <th scope="col">Jenis Kelamin</th>
-                                    <th scope="col">Alamat</th>
+                                    <th scope="col">Status Perkawinan</th>
                                     <th scope="col">Kewarganegaraan</th>
                                     <th scope="col">Agama</th>
-                                    <th scope="col">Status Perkawinan</th>
                                     <th scope="col">Pekerjaan</th>
-                                    <th scope="col">Maksud dan Tujuan</th>
+                                    <th scope="col">Alamat</th>
+                                    <th scope="col">Nama Calon Mempelai</th>
+                                    <th scope="col">Alamat Calon Mempelai</th>
+                                    <th scope="col">Kelurahan</th>
+                                    <th scope="col">Kecamatan</th>
+                                    <th scope="col">Kabupaten</th>
                                     <th scope="col">Tanggal Pengajuan</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <?php
                                 // $no = 1;
-                                $data = mysqli_query($con,"SELECT warga.nik, UPPER(warga.nama), warga.tempat, date_format(warga.tgl_lahir,'%d-%m-%Y ') as tgl_lahir, warga.jkel, warga. alamat, warga. kewarganegaraan, warga. agama, warga.status_perkawinan, warga.pekerjaan, skck.no_sku, skck.maksud_tujuan, skck.tgl_pengajuan FROM skck INNER JOIN warga ON skck.nik = warga.nik");
+                                $data = mysqli_query($con,"SELECT b.nik, UPPER(b.nama), b.tempat, date_format(b.tgl_lahir,'%d-%m-%Y ') as tgl_lahir, b.jkel, b.alamat, b.kewarganegaraan, b.agama, b.status_perkawinan, b.pekerjaan, a.no_sku, a.nama_mempelai, a.alamat_mempelai, a.kelurahan_mempelai, a.kecamatan_mempelai, a.kabupaten_mempelai,a.tgl_pengajuan FROM surat_numpang_nikah a INNER JOIN warga b ON a.nik = b.nik");
                                 while ($row = mysqli_fetch_array($data))
                                 {
 						    ?>
@@ -75,18 +79,22 @@ include "../koneksi.php";
                                 <tr>
                                 <th scope="row"><?= $row['no_sku']; ?></th>
                                 <td><?= $row['nik'];?></td>
-                                <td><?= $row['UPPER(warga.nama)'];?></td>
+                                <td><?= $row['UPPER(b.nama)'];?></td>
                                 <td><?= $row['tempat'];?></td>
                                 <td><?= $row['tgl_lahir'];?></td>
                                 <td><?= $row['jkel'];?></td>
-                                <td><?= $row['alamat'];?></td>
+                                <td><?= $row['status_perkawinan'];?></td>
                                 <td><?= $row['kewarganegaraan'];?></td>
                                 <td><?= $row['agama'];?></td>
-                                <td><?= $row['status_perkawinan'];?></td>
                                 <td><?= $row['pekerjaan'];?></td>
-                                <td><?= $row['maksud_tujuan'];?></td>
+                                <td><?= $row['alamat'];?></td>
+                                <td><?= $row['nama_mempelai'];?></td>
+                                <td><?= $row['alamat_mempelai'];?></td>
+                                <td><?= $row['kelurahan_mempelai'];?></td>
+                                <td><?= $row['kecamatan_mempelai'];?></td>
+                                <td><?= $row['kabupaten_mempelai'];?></td>
                                 <td><?= $row['tgl_pengajuan'];?></td>
-                                <td><a href="print_skck.php?no_sku=<?= $row['no_sku']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a></td>
+                                <td><a href="print_numpang_nikah.php?no_sku=<?= $row['no_sku']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a></td>
                                 </tr>
                             </tbody>
                             <?php

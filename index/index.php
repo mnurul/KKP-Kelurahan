@@ -27,9 +27,11 @@
                 Pilih Jenis Surat
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:300px;">
-                <a class="dropdown-item" href="../surat ket.usaha/ket_usaha.php">Surat keterangan Usaha</a>
+                <a class="dropdown-item" href="../surat ket.usaha/ket_usaha.php">Surat Keterangan Usaha</a>
                 <a class="dropdown-item" href="../surat skck/skck.php">Surat Keterangan Catatan Kepolisian</a>
-                <a class="dropdown-item" href="#">Surat</a>
+                <a class="dropdown-item" href="../surat numpang nikah/numpang_nikah.php">Surat Numpang Nikah</a>
+                <a class="dropdown-item" href="../surat kip/kip.php">Surat Kartu Indonesia Pintar</a>
+                <a class="dropdown-item" href="../surat izin rame rame/izin_rame_rame.php">Surat Izin Rame Rame</a>
             </div>
             </div>
         </div>

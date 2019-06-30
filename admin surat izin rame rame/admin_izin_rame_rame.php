@@ -14,7 +14,7 @@ include "../koneksi.php";
     <title>Kelurahan Harapan Baru</title>
     <link rel="stylesheet" href="../bs/css/bootstrap.min.css">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="style_admin_skck.css">
+    <link rel="stylesheet" type="text/css" href="style_admin_izin_rame_rame.css">
 </head>
 <body>
     <div class="bg">
@@ -23,7 +23,7 @@ include "../koneksi.php";
         <h5 class="title" >KELURAHAN HARAPAN BARU</h5>
         <h5 class="title_1" >KOTA BEKASI</h5>
         <div class="container">
-            <h2 class="title_2" style="margin-top:7px;">Surat Keterangan Catatan Kepolisian</h2>
+            <h2 class="title_2" style="margin-top:7px;">Surat Izin Rame Rame</h2>
         </div>
         <div class="container">
             <div class="dropdown" style="margin-top:-48px;margin-left:-15px;">
@@ -32,8 +32,9 @@ include "../koneksi.php";
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <a class="dropdown-item" href="../admin surat keterangan usaha/admin_ket_usaha.php">Surat keterangan Usaha</a>
-                    <button class="dropdown-item" type="button">Surat Pengajuan SKCK</button>
-                    <button class="dropdown-item" type="button">Another action</button>
+                    <a class="dropdown-item" href="../admin skck/admin_skck.php">Surat keterangan Catatan Kepolisian</a>
+                    <a class="dropdown-item" href="../admin surat numpang nikah/admin_numpang_nikah.php">Surat Numpang Nikah</a>
+                    <a class="dropdown-item" href="../admin surat izin rame rame/admin_izin_rame_rame.php">Surat Izin Rame Rame</a>
                     <button class="dropdown-item" type="button">So</button>
                 </div>  
             </div>
@@ -55,19 +56,23 @@ include "../koneksi.php";
                                     <th scope="col">Tempat</th>
                                     <th scope="col">Tanggal Lahir</th>
                                     <th scope="col">Jenis Kelamin</th>
-                                    <th scope="col">Alamat</th>
+                                    <th scope="col">Status Perkawinan</th>
                                     <th scope="col">Kewarganegaraan</th>
                                     <th scope="col">Agama</th>
-                                    <th scope="col">Status Perkawinan</th>
                                     <th scope="col">Pekerjaan</th>
-                                    <th scope="col">Maksud dan Tujuan</th>
+                                    <th scope="col">Alamat</th>
+                                    <th scope="col">Tujuan Acara</th>
+                                    <th scope="col">Tanggal Acara</th>
+                                    <th scope="col">Hari Acara</th>
+                                    <th scope="col">Jam Acara</th>
+                                    <th scope="col">Nama Acara</th>
                                     <th scope="col">Tanggal Pengajuan</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <?php
                                 // $no = 1;
-                                $data = mysqli_query($con,"SELECT warga.nik, UPPER(warga.nama), warga.tempat, date_format(warga.tgl_lahir,'%d-%m-%Y ') as tgl_lahir, warga.jkel, warga. alamat, warga. kewarganegaraan, warga. agama, warga.status_perkawinan, warga.pekerjaan, skck.no_sku, skck.maksud_tujuan, skck.tgl_pengajuan FROM skck INNER JOIN warga ON skck.nik = warga.nik");
+                                $data = mysqli_query($con,"SELECT b.nik, UPPER(b.nama), b.tempat, date_format(b.tgl_lahir,'%d-%m-%Y ') as tgl_lahir, b.jkel, b.alamat, b.kewarganegaraan, b.agama, b.status_perkawinan, b.pekerjaan, a.no_sku, a.tujuan_acara, a.tgl_acara, a.hari_acara,a.jam_acara, a.nama_acara,a.tgl_pengajuan FROM surat_izin_rame_rame a INNER JOIN warga b ON a.nik = b.nik");
                                 while ($row = mysqli_fetch_array($data))
                                 {
 						    ?>
@@ -75,18 +80,22 @@ include "../koneksi.php";
                                 <tr>
                                 <th scope="row"><?= $row['no_sku']; ?></th>
                                 <td><?= $row['nik'];?></td>
-                                <td><?= $row['UPPER(warga.nama)'];?></td>
+                                <td><?= $row['UPPER(b.nama)'];?></td>
                                 <td><?= $row['tempat'];?></td>
                                 <td><?= $row['tgl_lahir'];?></td>
                                 <td><?= $row['jkel'];?></td>
-                                <td><?= $row['alamat'];?></td>
+                                <td><?= $row['status_perkawinan'];?></td>
                                 <td><?= $row['kewarganegaraan'];?></td>
                                 <td><?= $row['agama'];?></td>
-                                <td><?= $row['status_perkawinan'];?></td>
                                 <td><?= $row['pekerjaan'];?></td>
-                                <td><?= $row['maksud_tujuan'];?></td>
+                                <td><?= $row['alamat'];?></td>
+                                <td><?= $row['tujuan_acara'];?></td>
+                                <td><?= $row['tgl_acara'];?></td>
+                                <td><?= $row['hari_acara'];?></td>
+                                <td><?= $row['jam_acara'];?></td>
+                                <td><?= $row['nama_acara'];?></td>
                                 <td><?= $row['tgl_pengajuan'];?></td>
-                                <td><a href="print_skck.php?no_sku=<?= $row['no_sku']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a></td>
+                                <td><a href="print_izin_rame_rame.php?no_sku=<?= $row['no_sku'];?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a></td>
                                 </tr>
                             </tbody>
                             <?php

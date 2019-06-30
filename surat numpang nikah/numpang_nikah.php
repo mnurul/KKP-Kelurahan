@@ -1,3 +1,8 @@
+<?php
+
+include "../koneksi.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,34 +13,41 @@
     <link rel="shourcut icon" href="../image/logo pemkot bekasi-3.png">
     <title>Kelurahan Harapan Baru</title>
     <link rel="stylesheet" href="../bs/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"/> -->
-    <link rel="stylesheet" type="text/css" href="style_admin.css">
+    <link rel="stylesheet" type="text/css" href="stylenumpangnikah.css">
 </head>
 <body>
     <div class="bg">
-        <img src="../image/logo pemkot bekasi-3.png" class="logo" alt="">
+        <a href="../index/index.php"><img src="../image/logo pemkot bekasi-3.png" class="logo" alt=""></a>
         <img src="../image/lineup-3.png" class="lineup" alt="">         
         <h5 class="title" >KELURAHAN HARAPAN BARU</h5>
         <h5 class="title_1" >KOTA BEKASI</h5>
         <div class="container">
-            <h1 class="title_2" style="margin-top:1px;">HALAMAN ADMIN</h1>
+            <h2 class="title_2" style="margin-top:7px;">Surat Numpang Nikah</h2>
         </div>
+        
         <div class="container" >
-            <div class="dropdown">
-            <button class="btn dropdown-toggle jsurat justify-content-center " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:300px;margin-left:410px;">
-                <span id="title-dropdown" style="margin-left:5px;">Pilih Jenis Surat</span> 
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:300px;">
-                <a class="dropdown-item" href="../admin surat keterangan usaha/admin_ket_usaha.php">Surat keterangan Usaha</a>
-                <a class="dropdown-item" href="../admin skck/admin_skck.php">Surat keterangan Catatan Kepolisian</a>
-                <a class="dropdown-item" href="../admin surat numpang nikah/admin_numpang_nikah.php">Surat Numpang Nikah</a>
-                <a class="dropdown-item" href="../admin surat kip/admin_kip.php">Surat Kartu Indonesia Pintar</a>
-                <a class="dropdown-item" href="../admin surat izin rame rame/admin_izin_rame_rame.php">Surat Izin Rame Rame</a>
-            </div>
+            <div class="col-md-12">
+                <div class="card justify-content-center setForm">
+                    <div class="card-header">
+                        Silakan Diisi Untuk Validasi NIK Anda
+                    </div>
+                    <div class="card-body" style="max-height: 406px;overflow-y: scroll;">
+                        <blockquote class="blockquote mb-0">
+                            <form action="validasi_nik.php" method="post">
+                                <div class="form-group">
+                                    <label for="nik">NIK</label>
+                                    <input type="text" class="form-control" required="required" name="nik" required autofocus>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Validasi</button>
+                            </form>
+                        </blockquote>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    
 
 
     <script src="../bs/js/bootstrap.bundle.min.js"></script>

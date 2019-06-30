@@ -23,7 +23,7 @@ include "../koneksi.php";
         <h5 class="title" >KELURAHAN HARAPAN BARU</h5>
         <h5 class="title_1" >KOTA BEKASI</h5>
         <div class="container">
-            <h2 class="title_2" style="margin-top:7px;">Surat Keterangan Usaha</h2>
+            <h2 class="title_2" style="margin-top:7px;">Surat Kartu Indonesia Pintar</h2>
         </div>
         
         <div class="container" >
@@ -41,7 +41,7 @@ include "../koneksi.php";
                             if ($row = mysqli_fetch_array($data))
                             {
                         ?>
-                            <form action="main_ket_usaha.php" id="myForm"  method="post">
+                            <form action="main_kip.php" id="myForm"  method="post">
                                 <div class="form-group">
                                     <label for="nik">NIK</label>
                                     <input type="text" class="form-control" required="required" value="<?= $row['nik']; ?>" name="nik" required autofocus readonly>
@@ -96,13 +96,8 @@ include "../koneksi.php";
                                     <label for="kewarganegaraan">Kewarganegaraan</label>
                                     <input type="text" class="form-control" required="required" value="<?= $row['kewarganegaraan']; ?>"name="kewarganegaraan" readonly>
                                 </div>
-                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                    Konfirmasi
-                                </button> -->
                                 <a href="ket_usaha.php" class="btn btn-primary">Kembali</a>
                                 <a href="#" class="btn btn-primary" onclick="document.getElementById('myForm').submit();">Lanjut</a>
-                                <!-- <a href="main_ket_usaha.php" type="submit" class="btn btn-primary">Lanjut</a> -->
-                                <!-- <button type="submit" class="btn btn-primary">Lanjut</button> -->
                             </form>
                             <?php                
                                 } else
@@ -120,9 +115,6 @@ include "../koneksi.php";
                 </div>
             </div>
         </div>
-           
-        
-
     </div>
 
     

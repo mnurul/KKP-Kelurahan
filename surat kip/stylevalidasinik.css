@@ -34,9 +34,9 @@ html {
     margin-left: -12px;
 }
 
-/* AKhir Garis Logo */
+/* Akhir Garis Logo */
 
-/* Title Header */
+/* Title Header  */
 .title {
     margin-left: 110px;
     margin-top: -55px;
@@ -51,27 +51,27 @@ html {
 
 /* Title Main */
 .title_2 {
-    padding-top: 70px;
+    padding-top: 10px;
     text-align: center;
-}
-
-.title_3 {
-    text-align: center;
-    margin-top: -5px;
+    padding-bottom: 10px;
 }
 
 /* Akhir Title Main */
 
-/* Dropdown Surat*/
-.jsurat {
-    margin-top: 50px;
-    justify-content: center;
-    margin-left: 900px;
-    padding: 20px 30px;
-    font-size: 20px;
-    background-color: #0dc3f4;
+/* Form Surat*/
+.setForm {
+    width: 500px;
+    left: 300px;
+    top: 10px;
+
 }
 
+/* Akhir Form Surat */
 
+/* Scroll Card */
+.scrollStyle {
+    max-height: 406px;
+    overflow-y: scroll;
+}
 
-/* Akhir Dropdown Surat*/
+/* Akhir Scroll Card */
